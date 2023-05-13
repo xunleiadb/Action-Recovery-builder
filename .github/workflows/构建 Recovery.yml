@@ -104,7 +104,7 @@ jobs:
       run: |
         mkdir workspace
         cd workspace
-        echo "::set-output name=pwd::$(pwd)"
+        echo "pwd=$(pwd)" >> $GITHUB_OUTPUT
         git config --global user.name "Captain Throwback"
         git config --global user.email "captainthrowback@hotmail.com"
         repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
